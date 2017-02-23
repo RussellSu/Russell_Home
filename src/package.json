@@ -1,0 +1,12 @@
+{
+  "name": "Russell_home",
+  "version": "0.0.1",
+  "description": "Russells Home Project",
+  "devDependencies": {
+    "webpack":"2.2.0",
+    "html-loader": "0.3.0",
+    "url-loader": "0.5.6"
+  },
+  
+  "author": "Russell Su"
+}
