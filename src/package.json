@@ -1,12 +1,23 @@
 {
-  "name": "Russell_home",
+  "name": "russell_home",
   "version": "0.0.1",
-  "description": "Russells Home Project",
+  "description": "russell's home project",
   "devDependencies": {
-    "webpack":"2.2.0",
+    "webpack": "2.2.0",
     "html-loader": "0.3.0",
     "url-loader": "0.5.6"
   },
-  
-  "author": "Russell Su"
+  "entry point": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RussellSu/Russell_Home.git"
+  },
+  "author": "Russell Su",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
