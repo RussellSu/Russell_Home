@@ -38,3 +38,7 @@ body{
     color: #b3b3b3!important;
     cursor: default;
 }
+
+.hide{
+    display:none !important;
+}
