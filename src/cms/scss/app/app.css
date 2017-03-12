@@ -30,6 +30,7 @@
 	top: calc(50% - 150px);
 	width: 400px;
 	height: 300px;
+	padding: 10px;
 	background-color: rgba(49, 176, 213, 0.5);
 	box-shadow: 0px 0px 17px #dadada;
 	border-radius: 4px 4px;
@@ -48,12 +49,12 @@
 
 }
 .login-wrapper .login-item{
-	margin-bottom: 1rem;
+	margin: 0 .5rem 1rem .5rem;
+	text-align:center;
 }
-.login-wrapper .login-item label{
-	min-width: 120px;
-	text-align: right;
-	padding-right: 1rem;
+.login-wrapper .login-item .fa{
+	margin-right: 1rem;
+	min-width:16px;
 }
 
 .login-wrapper .btn-bar{
@@ -78,4 +79,9 @@
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	color: rgba(49, 176, 213, 1);
 	background-color: #fff;
+}
+.login-wrapper .logon-btn{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
 }
