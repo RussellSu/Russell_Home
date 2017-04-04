@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Russell's home - 404</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./scss/screen.scss">
+</head>
+<body id="page404">
+<div class="tips-wrapper">
+    <h1 class="tips-header">404 ERROR</h1>
+    <div class="tips-content">
+        The page you requested was not found.<br />
+        Don't panic! We have found way to go back.
+    </div>
+</div>
+<button class="goHome-btn" onclick="goback()">Back to Russell's home</button>
+<script>
+    function goback(){
+        window.history.go(-1);
+    }
+</script>
+</body>
+</html>

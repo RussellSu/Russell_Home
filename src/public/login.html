@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Russell's home - CMS</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+	<link rel="stylesheet" href="./scss/libs/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./scss/app/app.css">
+    <link rel="stylesheet" href="./scss/app/global.css">
+</head>
+<body id="login">
+    <div class="login-wrapper">
+		<div class="login-info">
+			<h3>welcome to Russell's Home!</h3>
+		</div>
+		<div class="acount login-item">
+			<i class="fa fa-user"></i>
+			<input type="text" class="">
+		</div>
+		<div class="password login-item">
+			<i class="fa fa-key"></i>
+			<input type="password" class="">
+		</div>
+		<div class="btn-bar login-item">
+			<a href="/" class="login-btn login-withID" title="I am just a tourist.">tourist</a>
+			<a href="/" class="login-btn login-withoutID" title="login">login</a>
+		</div>
+		<div class="btn-bar">
+			<a href="/logon" class="logon-btn">log on</a>
+		</div>
+	</div>
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+		window.jQuery || document.write('<script src="./js/libs/jquery-3.1.1.min.js"><\/script>');
+		function route () {
+			console.log(window.location.hash.slice(1));
+		}
+		window.addEventListener('hashchange', route);
+		window.addEventListener('load', route);
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
+	</script>
+	<script type="text/javascript" src="./js/libs/vue.js"></script>
+<script type="text/javascript" src="/cms.js"></script></body>
+</html>

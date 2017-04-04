@@ -1,11 +1,9 @@
 
 #russell-app{
-	background: #efedea;/*#f6f1e8*/
-	background-image: url('/assets/img/sakura.jpg');
-	background-attachment: fixed;
-	background-position: 50% 50%;
-	background-repeat: space;
+	background: #efedea url('/assets/img/sakura.jpg') fixed 50% 50% space;/*#f6f1e8*/
+	background: #000;
 	color: #7c705e;
+	color: #fff;
 	font-family: "Open Sans", Helvetica, Georgia, Arial, sans-serif;
 	font-size: 16px;
 	font-weight: 300;
