@@ -11,11 +11,9 @@ var node_modules_dir = path.join(ROOT_PATH, 'node_modules');
 
 module.exports = {
     entry: {
-        // cmsVendor:[
-        //     path.join(CMS_PATH,'js','libs','jquery-3.1.1.min.js'),
-        //     path.join(CMS_PATH,'js','libs','bootstrap.min.js'),
-        //     path.join(CMS_PATH,'js','libs','vue.min.js'),
-        // ],
+        cmsVendor:[
+            path.join(CMS_PATH,'js','libs','vendors.js'),
+        ],
         cms: [
             path.join(CMS_PATH,'js','app','app.js')  //"./src/cms/js/app/app.js"
             // "./src/home.js",
@@ -34,12 +32,13 @@ module.exports = {
         loaders: [
             {test: /\.vue$/,loader: "vue"},
             //解析JS文件
-            // {test: /\.js$/,loader: 'babel'},
+            // {test: /\.js$/,loader: 'babel',exclude: /node_modules/,},
             //解析css
             {test: /\.css$/,loader: "style!css"},//style!css是style-loader!css-loader的简写,
             // 多个loader可以用在同一个文件上并且被链式调用。链式调用时从右到左执行且loader之间用“!”来分割。
             //css-loader会遍历css文件，找到所有的url(...)并且处理。
             // style-loader会把所有的样式插入到你页面的一个style tag中。
+
             // { test: /\.scss$/, loader: 'style!css!sass'},
             {
                 test: /\.scss$/,
