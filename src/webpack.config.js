@@ -11,9 +11,9 @@ var node_modules_dir = path.join(ROOT_PATH, 'node_modules');
 
 module.exports = {
     entry: {
-        cmsVendor:[
-            path.join(CMS_PATH,'js','libs','vendors.js'),
-        ],
+        // cmsVendor:[
+        //     path.join(CMS_PATH,'js','libs','vendors.js'),
+        // ],
         cms: [
             path.join(CMS_PATH,'js','app','app.js')  //"./src/cms/js/app/app.js"
             // "./src/home.js",
@@ -30,39 +30,58 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.vue$/,loader: "vue"},
+            {   // 得到jquery模块的绝对路径
+                test:require.resolve("jquery"),
+                // 将jquery绑定为window.jQuery 和 window.$
+                use:"expose-loader?jQuery!expose-loader?$"
+            },
+            // {
+            //     test:require.resolve("vue"),
+            //     use:"expose-loader?Vue"
+            // },
+            {test: /\.vue$/,use: "vue"},
             //解析JS文件
             // {test: /\.js$/,loader: 'babel',exclude: /node_modules/,},
+            {
+                test: /\.scss$/,
+                // exclude: /node_modules/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    loader: 'css-loader!sass-loader'
+                })
+            },
             //解析css
-            {test: /\.css$/,loader: "style!css"},//style!css是style-loader!css-loader的简写,
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    loader: 'css-loader'
+                })
+            },//style!css是style-loader!css-loader的简写,
             // 多个loader可以用在同一个文件上并且被链式调用。链式调用时从右到左执行且loader之间用“!”来分割。
             //css-loader会遍历css文件，找到所有的url(...)并且处理。
             // style-loader会把所有的样式插入到你页面的一个style tag中。
 
             // { test: /\.scss$/, loader: 'style!css!sass'},
-            {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    loader: 'css-loader!sass-loader'
-                })
-            },
+
             //解析html
-            {test: /\.html$/, loader: "html-loader"},
+            {test: /\.html$/, use: "html-loader"},
             {
                 test: /\.(jpg|png|gif|svg)$/,
-                loader: "url?mimetype=image/png?limit=1024",//url是url-loader的简写
+                use: "url?mimetype=image/png?limit=1024",//url是url-loader的简写
                 // use: '[name].[ext]?[hash]'
             }
         ]
     },
     resolve: {//for vue guide 2017.2.23 http://cn.vuejs.org/v2/guide/installation.html
         alias: {//设置别名后，就不需要写真实的路径，只需用别名代替
-            // 'vue$': './node_modules/vue/dist/vue.common.js',
-            'vue': path.join(CMS_PATH,'js','libs','vue.min.js'),
-            'jQuery': './cms/js/libs/jquery-3.1.1.min.js',
-        }
+            'vue$': 'vue/dist/vue.common.js',
+            // 'vue': path.join(CMS_PATH,'js','libs','vue.min.js'),
+            // 'jQuery': './cms/js/libs/jquery-3.1.1.min.js',
+            'appStyle': './cms/style/screen.scss',
+        },
+        extensions: ['.js', '.vue']
     },
     plugins: [
         //这个插件的作用是给输出的文件头部添加注释信息。
@@ -73,7 +92,7 @@ module.exports = {
         //     // disable:false
         // }),
         //extract-text-webpack-plugin插件，不把样式打包到脚本中，而是独立打包样式文件，生成新的css文件。
-        // new ExtractTextPlugin("./[name].css"),
+        new ExtractTextPlugin("./[name].css"),
         new HtmlWebpackPlugin({
             template: path.join(CMS_PATH,'app.html'),
             filename: path.join(BUILD_PATH,'cmsApp.html'),
@@ -85,13 +104,10 @@ module.exports = {
             template: path.join(CMS_PATH,'logIn.html'),
             filename: path.join(BUILD_PATH,'login.html')
         }),
-        // new webpack.ProvidePlugin({
-        //     $: path.join(CMS_PATH,'js','libs','jquery-3.1.1.min.js'),
-        //     jQuery: path.join(CMS_PATH,'js','libs','jquery-3.1.1.min.js')
-        // }),
-        // new webpack.ProvidePlugin({
-        //     Vue: path.join(CMS_PATH,'js','libs','vue.min.js')
-        // })
+        new ExtractTextPlugin({
+            filename:path.join(BUILD_PATH,'assets','style','[name].css'),
+            allChunks: true
+        })
     ],
     // externals:{
     //     '$':path.join(CMS_PATH,'js','libs','jquery-3.1.1.min.js'),

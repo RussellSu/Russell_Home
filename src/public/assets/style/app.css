@@ -1,0 +1,144 @@
+/*
+* @@@@@@@@@@@@@@ global style
+*/
+body{
+	font-family: "Helvetica Neue",Arial,"Microsoft YaHei",sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	font-weight: 400;
+	color: #808080;
+}
+.btn{
+	display: inline-block;
+	margin: 0;
+	padding: 5px 7px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 4px;
+	font-size: 1rem;
+	line-height: 18px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	min-width: 56px;
+	min-height: 24px;
+	color: rgba(0, 0, 0, .8);
+	background-color: transparent;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition: background ease-out .1s;
+	transition: background ease-out .1s;
+}
+.btn-sm{
+	padding: 4px;
+	line-height: 16px;
+}
+.warning-btn{
+
+}
+.btn[disabled],
+.btn.disabled{
+	border: 1px solid rgba(0,0,0,.1)!important;
+	background: transparent!important;
+	color: #b3b3b3!important;
+	cursor: default;
+}
+/**
+** @notes 表现类
+*/
+.hide{
+	display:none !important;
+}
+.text-center{
+	text-align: center !important;
+}
+.text-left{
+	text-align: left !important;
+}
+.text-right{
+	text-align: right !important;
+}
+#russell-app{
+	background: #efedea url('/assets/img/sakura.jpg') fixed 50% 50% space;/*#f6f1e8*/
+	background: #000;
+	color: #7c705e;
+	color: #fff;
+	font-family: "Open Sans", Helvetica, Georgia, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 24px;
+}
+
+.banner{
+	padding: 100px 10px;
+	background: linear-gradient(45deg,#020031 0, #6d3353 100%);
+	background-image: linear-gradient(45deg, #020031 0, #6d3353 100%);
+}
+#login{
+	background: #6c6c6c;/*#f6f1e8*/
+	background-attachment: fixed;
+	background-image: url('/assets/img/giraffe01.jpg');
+	background-position: 50% 50%;
+	background-repeat: space;
+}
+.login-wrapper{
+	position: fixed;
+	left: calc(50% - 200px);
+	top: calc(50% - 150px);
+	width: 400px;
+	height: 300px;
+	padding: 10px;
+	background-color: rgba(49, 176, 213, 0.5);
+	box-shadow: 0px 0px 17px #dadada;
+	border-radius: 4px 4px;
+	color:#fff;
+}
+.login-wrapper input{
+	border:0;
+	padding: .3rem;
+	font-family: inherit;
+	color:#fff;
+	background-color: rgba(255, 255, 255, .2);
+}
+.login-wrapper .login-info{
+	padding: 30px 10px;
+	text-align: center;
+
+}
+.login-wrapper .login-item{
+	margin: 0 .5rem 1rem .5rem;
+	text-align:center;
+}
+.login-wrapper .login-item .fa{
+	margin-right: 1rem;
+	min-width:16px;
+}
+
+.login-wrapper .btn-bar{
+	text-align: center;
+}
+
+.login-wrapper .login-btn{
+	display: inline-block;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 4px;
+	margin:0 1.2rem;
+	padding: 4px 10px;
+	color: #fff;
+	text-decoration: none;
+	background-color: transparent;
+	transition: color,background-color,transform .5s;
+
+}
+
+.login-wrapper .login-btn:hover{
+	transform: scale3d(1.4,1.4,1);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	color: rgba(49, 176, 213, 1);
+	background-color: #fff;
+}
+.login-wrapper .logon-btn{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
