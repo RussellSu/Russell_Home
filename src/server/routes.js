@@ -44,9 +44,7 @@ module.exports = function (express, app, passport, config) {
         res.sendFile("cmsApp.html",{root:path.join(__dirname,"./public")});
     });
     app.get("/login", function(req, res){
-        // res.send("hello world!");
-        // res.sendFile("app.html",{root:path.join(__dirname,"./public")});
-        res.sendFile("logIn.html",{root:path.join(__dirname,"../cms")});
+        res.sendFile("login.html",{root:path.join(__dirname,"../public")});
     });
     // app.get('*',function(req, res){
     //     res.sendFile('404.html',{root:path.join(__dirname,"../public")});
