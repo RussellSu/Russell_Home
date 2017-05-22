@@ -10,6 +10,7 @@ var routeList = require("./routers.js");
 var appHome = require("../../components/app.vue");
 
 var router = new VueRouter({
+    mode: 'history',
     routeList
 });
 
